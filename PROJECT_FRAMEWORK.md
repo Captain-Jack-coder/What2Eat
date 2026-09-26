@@ -1,4 +1,4 @@
-# What2Eat v1.1.1 — Product Framework
+# What2Eat v1.1.2 — Product Framework
 
 ## Core problem
 What2Eat exists for the moment when someone needs lunch or an evening meal, but does not want to spend mental energy deciding what to eat.
@@ -21,7 +21,7 @@ Time:
 The wheel is not the recommendation algorithm.
 It is the final decision ritual after unsuitable meals have been removed.
 
-## v1.1.1 updates
+## v1.1.2 updates
 - Added **Recently eaten**
 - Recently accepted meals are stored in `localStorage`
 - Recent meals are temporarily deprioritised to avoid repetition
@@ -75,8 +75,14 @@ Do not turn What2Eat into another interface that asks users too many questions.
 **Tell us how you feel and how much time you have. We remove bad options. The wheel makes the final choice.**
 
 
-## v1.1.1 wheel correction
+## v1.1.2 wheel correction
 - The wheel now renders one slice for every current candidate meal.
 - Meal names and emoji are no longer printed on the wheel.
 - The wheel centre is intentionally text-free except for a small cutlery symbol.
 - Candidate count remains visible outside the wheel in the match summary.
+
+
+## v1.1.2
+- Removed the wheel label layer entirely.
+- Added cache-busting query strings for CSS and JS.
+- The wheel now displays colour slices only.

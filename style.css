@@ -250,22 +250,6 @@ h1 span{color:#7a8087}
   box-shadow:var(--shadow);
   transition:transform 1.35s cubic-bezier(.16,.77,.2,1);
 }
-.labels{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-}
-.wheel-label{
-  position:absolute;
-  transform:translate(-50%,-50%);
-  max-width:104px;
-  text-align:center;
-  font-size:12px;
-  line-height:1.16;
-  font-weight:800;
-  color:#27303a;
-  text-shadow:0 1px 0 rgba(255,255,255,.7);
-}
 .hub{
   position:absolute;
   z-index:5;
@@ -478,10 +462,6 @@ a:focus-visible{
   }
   .choice.time{
     min-height:66px;
-  }
-  .wheel-label{
-    max-width:84px;
-    font-size:10px;
   }
   .hub{
     width:106px;

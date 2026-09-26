@@ -144,8 +144,6 @@ function updateCandidates() {
 }
 
 function renderWheel(items) {
-  $("labels").innerHTML = "";
-
   if (!items.length) {
     $("wheel").style.background = "conic-gradient(#ebe6de 0 360deg)";
     $("hubText").textContent = "🍴";

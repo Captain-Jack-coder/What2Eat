@@ -1,11 +1,11 @@
-# What2Eat v1.1.1
+# What2Eat v1.1.2
 
 A lightweight meal-decision website for lunch and evening meals.
 
 ## Core logic
 `Energy × Available time → suitable meal pool → final random choice`
 
-## What's new in v1.1.1
+## What's new in v1.1.2
 - Recently eaten history
 - Anti-repetition logic
 - Share this meal
@@ -41,8 +41,14 @@ Settings → Pages → Deploy from a branch → main → /(root)
 If you only double-click `index.html` locally, some browsers may block loading the JSON file. That does not mean the GitHub Pages version is broken.
 
 
-## v1.1.1 wheel correction
+## v1.1.2 wheel correction
 - The wheel now renders one slice for every current candidate meal.
 - Meal names and emoji are no longer printed on the wheel.
 - The wheel centre is intentionally text-free except for a small cutlery symbol.
 - Candidate count remains visible outside the wheel in the match summary.
+
+
+## v1.1.2
+- Removed the wheel label layer entirely.
+- Added cache-busting query strings for CSS and JS.
+- The wheel now displays colour slices only.
