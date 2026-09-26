@@ -267,6 +267,11 @@ h1 span{color:#7a8087}
   padding:14px;
   font-weight:850;
 }
+#hubText{
+  font-size:44px;
+  line-height:1;
+  display:inline-block;
+}
 .primary{
   margin-top:24px;
   border:0;
@@ -463,9 +468,12 @@ a:focus-visible{
     min-height:66px;
   }
   .hub{
-    width:106px;
-    height:106px;
-    font-size:13px;
+    width:112px;
+    height:112px;
+  }  
+
+  #hubText{
+    font-size:34px;
   }
   .history{
     grid-template-columns:1fr;
