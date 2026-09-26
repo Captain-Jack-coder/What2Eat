@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f1ea">
+  <meta name="description" content="What2Eat helps you decide your next meal based on your current energy and available time.">
+  <title>What2Eat — Stop overthinking your next meal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="What2Eat home">
+        <span class="brandmark">W</span>
+        <span class="brandtext">What2Eat</span>
+      </a>
+      <span class="version">v1.1 · Decide it. Eat it. Share it.</span>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">STOP OVERTHINKING YOUR NEXT MEAL</p>
+        <h1>You have enough decisions today.<br><span>Your next meal shouldn't be one of them.</span></h1>
+        <p class="intro">Tell What2Eat how much energy and time you have. It removes unsuitable options, then lets the wheel make the final call.</p>
+      </div>
+
+      <aside class="chef-card" aria-label="What2Eat little chef illustration">
+        <div class="chef-glow"></div>
+        <svg class="chef-figure" viewBox="0 0 260 260" role="img" aria-label="Cute little chef mascot">
+          <circle cx="130" cy="130" r="110" fill="#fffaf4"/>
+          <ellipse cx="130" cy="214" rx="44" ry="16" fill="#efe6da"/>
+          <circle cx="130" cy="112" r="48" fill="#f7d5bf"/>
+          <path d="M90 90c-10-16 3-34 20-34 5-19 35-22 48-6 18-8 36 6 34 24 13 6 19 24 7 36H90c-10-3-15-11-15-20 0-10 5-18 15-22z" fill="#ffffff" stroke="#1b2330" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M92 158c10 34 96 34 76 0" fill="#ffffff" stroke="#1b2330" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="113" cy="112" r="5" fill="#1b2330"/>
+          <circle cx="147" cy="112" r="5" fill="#1b2330"/>
+          <path d="M120 130c5 5 15 5 20 0" stroke="#1b2330" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M102 168h56l10 42H92l10-42z" fill="#1b2330"/>
+          <rect x="119" y="167" width="22" height="13" rx="4" fill="#ef6a4c"/>
+          <path d="M105 174l-20 40" stroke="#1b2330" stroke-width="6" stroke-linecap="round"/>
+          <path d="M155 174l20 40" stroke="#1b2330" stroke-width="6" stroke-linecap="round"/>
+          <path d="M116 210l-12 26" stroke="#1b2330" stroke-width="6" stroke-linecap="round"/>
+          <path d="M144 210l12 26" stroke="#1b2330" stroke-width="6" stroke-linecap="round"/>
+          <path d="M80 208c12-2 23 8 18 20-6 13-27 9-28-6-1-7 3-12 10-14z" fill="#ef6a4c"/>
+          <path d="M182 208c12-2 23 8 18 20-6 13-27 9-28-6-1-7 3-12 10-14z" fill="#ef6a4c"/>
+          <circle cx="104" cy="124" r="3" fill="#f1a4a4"/>
+          <circle cx="156" cy="124" r="3" fill="#f1a4a4"/>
+        </svg>
+        <div class="chef-caption">
+          <strong>Meet your tiny kitchen assistant.</strong>
+          <p>Not here to judge your choices. Just here to stop you from overthinking lunch or dinner.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="block">
+      <div class="heading">
+        <div>
+          <p class="step">01</p>
+          <h2>How are you doing?</h2>
+        </div>
+        <p>Only answer what actually changes the recommendation.</p>
+      </div>
+
+      <div class="question">
+        <p class="label">How tired are you?</p>
+        <div class="grid three">
+          <button class="choice" data-energy="fine" type="button">
+            <b>😌 I'm fine</b>
+            <span>Normal cooking is okay.</span>
+          </button>
+          <button class="choice" data-energy="tired" type="button">
+            <b>😵 Pretty tired</b>
+            <span>Keep the steps manageable.</span>
+          </button>
+          <button class="choice" data-energy="done" type="button">
+            <b>💀 Completely done</b>
+            <span>Minimum effort, please.</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="label">How much time do you have?</p>
+        <div class="grid three">
+          <button class="choice time" data-time="10" type="button"><b>⚡ 10 min</b></button>
+          <button class="choice time" data-time="20" type="button"><b>🕐 20 min</b></button>
+          <button class="choice time" data-time="30plus" type="button"><b>🍳 30+ min</b></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="heading">
+        <div>
+          <p class="step">02</p>
+          <h2>Let the wheel make the last decision.</h2>
+        </div>
+        <p id="matchSummary">Choose your energy and time first.</p>
+      </div>
+
+      <div class="layout">
+        <div class="wheelcol">
+          <div class="wheelwrap">
+            <div class="pointer" aria-hidden="true"></div>
+            <div id="wheel" class="wheel"></div>
+            <div id="labels" class="labels"></div>
+            <div class="hub"><span id="hubText">Ready?</span></div>
+          </div>
+          <button id="spin" class="primary" type="button" disabled>Decide my meal</button>
+          <p id="status" class="status">Pick two answers to unlock the wheel.</p>
+        </div>
+
+        <aside class="result">
+          <p class="step">NEXT MEAL</p>
+          <div id="emoji" class="emoji">🍽️</div>
+          <h3 id="mealName">Waiting for a decision.</h3>
+          <p id="meta" class="muted">Your result will appear here.</p>
+          <div id="why" class="why">Recommendations are based only on your current energy and available time.</div>
+
+          <div class="actions">
+            <button id="accept" class="accept" type="button" disabled>I'll have this</button>
+            <button id="again" class="secondary" type="button" disabled>Spin again</button>
+          </div>
+
+          <div class="share-panel">
+            <p class="share-label">Cooking with someone?</p>
+            <button id="share" class="share" type="button" disabled>Share this meal</button>
+          </div>
+
+          <p id="message" class="message"></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="heading">
+        <div>
+          <p class="step">03</p>
+          <h2>Recently eaten</h2>
+        </div>
+        <button id="clear" class="clear" type="button">Clear</button>
+      </div>
+      <p class="recent-copy">Meals you accepted are stored here, and the most recent ones are temporarily deprioritised so you do not get the same thing again and again.</p>
+      <div id="history" class="history">
+        <p class="muted">Nothing here yet.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>What2Eat v1.1</span>
+      <span>Lunch + evening meals. Breakfast can look after itself.</span>
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
