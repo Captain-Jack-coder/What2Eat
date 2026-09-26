@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f3ed">
+  <title>What2Eat — Stop overthinking your next meal</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="page">
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brandmark">W</span><span>What2Eat</span></a>
+    <span class="version">v1 · Energy × Time → Meal</span>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">STOP OVERTHINKING YOUR NEXT MEAL</p>
+    <h1>You have enough decisions today.<br><span>Your next meal shouldn't be one of them.</span></h1>
+    <p class="intro">Tell What2Eat how much energy and time you have. It removes unsuitable options, then lets the wheel make the final call.</p>
+  </section>
+
+  <section class="block">
+    <div class="heading"><div><p class="step">01</p><h2>How are you doing?</h2></div><p>Only answer what changes the recommendation.</p></div>
+
+    <div class="question">
+      <p class="label">How tired are you?</p>
+      <div class="grid three">
+        <button class="choice" data-energy="fine"><b>😌 I'm fine</b><span>Normal cooking is okay.</span></button>
+        <button class="choice" data-energy="tired"><b>😵 Pretty tired</b><span>Keep the steps manageable.</span></button>
+        <button class="choice" data-energy="done"><b>💀 Completely done</b><span>Minimum effort, please.</span></button>
+      </div>
+    </div>
+
+    <div class="question">
+      <p class="label">How much time do you have?</p>
+      <div class="grid three">
+        <button class="choice time" data-time="10"><b>⚡ 10 min</b></button>
+        <button class="choice time" data-time="20"><b>🕐 20 min</b></button>
+        <button class="choice time" data-time="30plus"><b>🍳 30+ min</b></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="heading"><div><p class="step">02</p><h2>Let the wheel make the last decision.</h2></div><p id="matchSummary">Choose your energy and time first.</p></div>
+    <div class="layout">
+      <div class="wheelcol">
+        <div class="wheelwrap">
+          <div class="pointer"></div>
+          <div id="wheel" class="wheel"></div>
+          <div id="labels" class="labels"></div>
+          <div class="hub"><span id="hubText">Ready?</span></div>
+        </div>
+        <button id="spin" class="primary" disabled>Decide my meal</button>
+        <p id="status" class="status">Pick two answers to unlock the wheel.</p>
+      </div>
+
+      <aside class="result">
+        <p class="step">NEXT MEAL</p>
+        <div id="emoji" class="emoji">🍽️</div>
+        <h3 id="mealName">Waiting for a decision.</h3>
+        <p id="meta" class="muted">Your result will appear here.</p>
+        <div id="why" class="why">Recommendations are based only on your current energy and available time.</div>
+        <div class="actions">
+          <button id="accept" class="accept" disabled>I'll have this</button>
+          <button id="again" class="secondary" disabled>Spin again</button>
+        </div>
+        <p id="message" class="message"></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="heading"><div><p class="step">03</p><h2>Your recent picks</h2></div><button id="clear" class="clear">Clear</button></div>
+    <div id="history" class="history"><p class="muted">Nothing here yet.</p></div>
+  </section>
+
+  <footer><span>What2Eat v1</span><span>Lunch + evening meals. Breakfast can look after itself.</span></footer>
+</main>
+<script src="./app.js"></script>
+</body>
+</html>
