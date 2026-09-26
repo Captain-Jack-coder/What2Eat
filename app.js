@@ -143,46 +143,22 @@ function updateCandidates() {
   renderWheel(candidates);
 }
 
-function sampleVisible(items, max = 8) {
-  if (items.length <= max) return [...items];
-  const result = [];
-  const step = items.length / max;
-  for (let i = 0; i < max; i++) {
-    result.push(items[Math.floor(i * step)]);
-  }
-  return result;
-}
-
 function renderWheel(items) {
-  const visible = sampleVisible(items, 8);
   $("labels").innerHTML = "";
 
-  if (!visible.length) {
+  if (!items.length) {
     $("wheel").style.background = "conic-gradient(#ebe6de 0 360deg)";
-    $("hubText").textContent = "Ready?";
+    $("hubText").textContent = "🍴";
     return;
   }
 
-  const slice = 360 / visible.length;
-  const gradient = visible
+  const slice = 360 / items.length;
+  const gradient = items
     .map((meal, i) => `${wheelColors[i % wheelColors.length]} ${i * slice}deg ${(i + 1) * slice}deg`)
     .join(",");
 
   $("wheel").style.background = `conic-gradient(${gradient})`;
-
-  visible.forEach((meal, i) => {
-    const angle = i * slice + slice / 2 - 90;
-    const radius = 37;
-    const rad = angle * Math.PI / 180;
-    const label = document.createElement("div");
-    label.className = "wheel-label";
-    label.style.left = `${50 + radius * Math.cos(rad)}%`;
-    label.style.top = `${50 + radius * Math.sin(rad)}%`;
-    label.textContent = `${meal.emoji} ${meal.name}`;
-    $("labels").appendChild(label);
-  });
-
-  $("hubText").textContent = `${items.length} options`;
+  $("hubText").textContent = "🍴";
 }
 
 function spin() {
@@ -199,7 +175,7 @@ function spin() {
 
   state.rotation += 1080 + Math.floor(Math.random() * 360);
   $("wheel").style.transform = `rotate(${state.rotation}deg)`;
-  $("hubText").textContent = "Deciding…";
+  $("hubText").textContent = "🍴";
   $("status").textContent = "No more thinking.";
 
   setTimeout(() => {
@@ -217,7 +193,7 @@ function showResult(meal) {
   $("mealName").textContent = meal.name;
   $("meta").textContent = `${meal.time} min · effort ${meal.effort}/3 · ${meal.servings} serving${meal.servings > 1 ? "s" : ""}`;
   $("why").textContent = `${meal.name} fits because your current energy allows effort level ${effortLimit[state.energy]}/3 and it matches the time you selected. ${meal.note}`;
-  $("hubText").textContent = meal.name;
+  $("hubText").textContent = "🍴";
   $("status").textContent = "Decision made. Accept it or spin again.";
 }
 
