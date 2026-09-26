@@ -27,8 +27,16 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">STOP OVERTHINKING YOUR NEXT MEAL</p>
-        <h1>You have enough decisions today.<br><span>Your next meal shouldn't be one of them.</span></h1>
-        <p class="intro">Tell What2Eat how much energy and time you have. It removes unsuitable options, then lets the wheel make the final call.</p>
+        <h1>
+          You have enough decisions today.
+          <br>
+          <span>Your next meal shouldn't be one of them.</span>
+        </h1>
+
+        <p class="intro">
+          Tell What2Eat how much energy and time you have.
+          It removes unsuitable options, then lets the wheel make the final call.
+        </p>
       </div>
 
       <aside class="chef-card" aria-label="What2Eat little chef illustration">
@@ -42,7 +50,10 @@
 
         <div class="chef-caption">
           <strong>Meet your tiny kitchen assistant.</strong>
-          <p>Not here to judge your choices. Just here to stop you from overthinking lunch or dinner.</p>
+          <p>
+            Not here to judge your choices.
+            Just here to stop you from overthinking your next meal.
+          </p>
         </div>
       </aside>
     </section>
@@ -53,20 +64,26 @@
           <p class="step">01</p>
           <h2>How are you doing?</h2>
         </div>
-        <p>Only answer what actually changes the recommendation.</p>
+
+        <p>
+          Only answer what actually changes the recommendation.
+        </p>
       </div>
-      
+
       <div class="question">
         <p class="label">How tired are you?</p>
+
         <div class="grid three">
           <button class="choice" data-energy="fine" type="button">
             <b>😌 I'm fine</b>
             <span>Normal cooking is okay.</span>
           </button>
+
           <button class="choice" data-energy="tired" type="button">
             <b>😵 Pretty tired</b>
             <span>Keep the steps manageable.</span>
           </button>
+
           <button class="choice" data-energy="done" type="button">
             <b>💀 Completely done</b>
             <span>Minimum effort, please.</span>
@@ -76,10 +93,19 @@
 
       <div class="question">
         <p class="label">How much time do you have?</p>
+
         <div class="grid three">
-          <button class="choice time" data-time="10" type="button"><b>⚡ 10 min</b></button>
-          <button class="choice time" data-time="20" type="button"><b>🕐 20 min</b></button>
-          <button class="choice time" data-time="30plus" type="button"><b>🍳 30+ min</b></button>
+          <button class="choice time" data-time="10" type="button">
+            <b>⚡ 10 min</b>
+          </button>
+
+          <button class="choice time" data-time="20" type="button">
+            <b>🕐 20 min</b>
+          </button>
+
+          <button class="choice time" data-time="30plus" type="button">
+            <b>🍳 30+ min</b>
+          </button>
         </div>
       </div>
     </section>
@@ -90,7 +116,10 @@
           <p class="step">02</p>
           <h2>Let the wheel make the last decision.</h2>
         </div>
-        <p id="matchSummary">Choose your energy and time first.</p>
+
+        <p id="matchSummary">
+          Choose your energy and time first.
+        </p>
       </div>
 
       <div class="layout">
@@ -98,27 +127,78 @@
           <div class="wheelwrap">
             <div class="pointer" aria-hidden="true"></div>
             <div id="wheel" class="wheel"></div>
-              <div class="hub" aria-hidden="true"><span id="hubText">🍴</span></div>
+
+            <div class="hub" aria-hidden="true">
+              <span id="hubText">🍴</span>
+            </div>
           </div>
-          <button id="spin" class="primary" type="button" disabled>Decide my meal</button>
-          <p id="status" class="status">Pick two answers to unlock the wheel.</p>
+
+          <button
+            id="spin"
+            class="primary"
+            type="button"
+            disabled
+          >
+            Decide my meal
+          </button>
+
+          <p id="status" class="status">
+            Pick two answers to unlock the wheel.
+          </p>
         </div>
 
         <aside class="result">
           <p class="step">NEXT MEAL</p>
-          <div id="emoji" class="emoji">🍽️</div>
-          <h3 id="mealName">Waiting for a decision.</h3>
-          <p id="meta" class="muted">Your result will appear here.</p>
-          <div id="why" class="why">Recommendations are based only on your current energy and available time.</div>
+
+          <div id="emoji" class="emoji">
+            🍽️
+          </div>
+
+          <h3 id="mealName">
+            Waiting for a decision.
+          </h3>
+
+          <p id="meta" class="muted">
+            Your result will appear here.
+          </p>
+
+          <div id="why" class="why">
+            Recommendations are based only on your current energy and available time.
+          </div>
 
           <div class="actions">
-            <button id="accept" class="accept" type="button" disabled>I'll have this</button>
-            <button id="again" class="secondary" type="button" disabled>Spin again</button>
+            <button
+              id="accept"
+              class="accept"
+              type="button"
+              disabled
+            >
+              I'll have this
+            </button>
+
+            <button
+              id="again"
+              class="secondary"
+              type="button"
+              disabled
+            >
+              Spin again
+            </button>
           </div>
 
           <div class="share-panel">
-            <p class="share-label">Cooking with someone?</p>
-            <button id="share" class="share" type="button" disabled>Share this meal</button>
+            <p class="share-label">
+              Cooking with someone?
+            </p>
+
+            <button
+              id="share"
+              class="share"
+              type="button"
+              disabled
+            >
+              Share this meal
+            </button>
           </div>
 
           <p id="message" class="message"></p>
@@ -132,11 +212,25 @@
           <p class="step">03</p>
           <h2>Recently eaten</h2>
         </div>
-        <button id="clear" class="clear" type="button">Clear</button>
+
+        <button
+          id="clear"
+          class="clear"
+          type="button"
+        >
+          Clear
+        </button>
       </div>
-      <p class="recent-copy">Meals you accepted are stored here, and the most recent ones are temporarily deprioritised so you do not get the same thing again and again.</p>
+
+      <p class="recent-copy">
+        Meals you accepted are stored here, and the most recent ones are
+        temporarily deprioritised so you do not get the same thing again and again.
+      </p>
+
       <div id="history" class="history">
-        <p class="muted">Nothing here yet.</p>
+        <p class="muted">
+          Nothing here yet.
+        </p>
       </div>
     </section>
 
